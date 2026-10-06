@@ -1,0 +1,30 @@
+{
+  "version": "v14_catboost_feature_hpo",
+  "seed": 20261006,
+  "threads": 6,
+  "feature_blocks": [
+    "survey_native",
+    "survey_freq",
+    "survey_freq_missing",
+    "survey_freq_transductive",
+    "survey_freq_missing_impute"
+  ],
+  "frequency_columns": ["state", "employment_occupation", "employment_industry", "hhs_region", "agegrp", "employment_status"],
+  "threshold_min": 0.15,
+  "threshold_max": 0.60,
+  "threshold_steps": 91,
+  "base_catboost": {"iterations": 500, "depth": 6, "learning_rate": 0.05, "l2_leaf_reg": 5.0, "loss_function": "Logloss"},
+  "hpo_screen_folds": [0, 1],
+  "hpo_top_k": 3,
+  "hpo": [
+    {"id":"sym_d5","iterations":650,"depth":5,"learning_rate":0.04,"l2_leaf_reg":5.0,"loss_function":"Logloss"},
+    {"id":"sym_d6_l2_8","iterations":650,"depth":6,"learning_rate":0.04,"l2_leaf_reg":8.0,"loss_function":"Logloss"},
+    {"id":"sym_d7","iterations":550,"depth":7,"learning_rate":0.04,"l2_leaf_reg":8.0,"loss_function":"Logloss"},
+    {"id":"lossguide31","iterations":650,"depth":6,"learning_rate":0.04,"l2_leaf_reg":6.0,"loss_function":"Logloss","grow_policy":"Lossguide","max_leaves":31,"min_data_in_leaf":20},
+    {"id":"lossguide63","iterations":650,"depth":7,"learning_rate":0.035,"l2_leaf_reg":8.0,"loss_function":"Logloss","grow_policy":"Lossguide","max_leaves":63,"min_data_in_leaf":30},
+    {"id":"depthwise6","iterations":650,"depth":6,"learning_rate":0.04,"l2_leaf_reg":6.0,"loss_function":"Logloss","grow_policy":"Depthwise","min_data_in_leaf":20},
+    {"id":"bayes_temp05","iterations":600,"depth":6,"learning_rate":0.04,"l2_leaf_reg":6.0,"loss_function":"Logloss","bootstrap_type":"Bayesian","bagging_temperature":0.5},
+    {"id":"bernoulli85","iterations":600,"depth":6,"learning_rate":0.04,"l2_leaf_reg":6.0,"loss_function":"Logloss","bootstrap_type":"Bernoulli","subsample":0.85}
+  ],
+  "remote_submission_authorized": false
+}

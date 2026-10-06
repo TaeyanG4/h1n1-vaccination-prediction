@@ -1,0 +1,23 @@
+{
+  "version": "v9_context_confirm",
+  "parent": "v2_cat_survey",
+  "candidate": "survey_context",
+  "seed": 20261005,
+  "threads": 6,
+  "selection_folds": [0, 1],
+  "confirmation_folds": [2, 3, 4],
+  "threshold_min": 0.15,
+  "threshold_max": 0.60,
+  "threshold_steps": 91,
+  "expected_context_selection_threshold": 0.31,
+  "expected_context_selection_f1": 0.640850196535158,
+  "bootstrap_repeats": 2000,
+  "catboost": {
+    "iterations": 500,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 5.0,
+    "loss_function": "Logloss"
+  },
+  "remote_submission_authorized": false
+}

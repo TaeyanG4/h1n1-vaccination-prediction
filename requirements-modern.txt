@@ -1,0 +1,9 @@
+# Later research environment additions used after the core CatBoost baseline.
+# PyTorch/CUDA is intentionally not pinned here; install the build matching the host CUDA setup.
+xgboost==3.3.0
+lightgbm==4.6.0
+optuna==4.9.0
+tabm==0.0.3
+pytabkit==1.7.3
+interpret==0.7.8
+tabpfn==9.1.0

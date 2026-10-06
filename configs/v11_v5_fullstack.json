@@ -1,0 +1,20 @@
+{
+  "version": "v11_v5_fullstack",
+  "parent": "v5_automl",
+  "engine": "autogluon",
+  "autogluon_version": "1.6.3",
+  "feature_mode": "survey",
+  "preset": "best_quality",
+  "selected_model": "CatBoost_BAG_L2",
+  "frozen_threshold": 0.315,
+  "seed": 20261005,
+  "time_limit_seconds": 3600,
+  "num_cpus": 6,
+  "num_gpus": 0,
+  "num_stack_levels": 1,
+  "num_bag_sets": 1,
+  "eval_metric": "f1",
+  "dynamic_stacking": false,
+  "remote_submission_authorized": false,
+  "purpose": "Rebuild the exact v5 AutoGluon stack family on all 42,154 labeled rows. Preserve original v5 development fold IDs, assign former audit groups to five group-safe folds, generate full-data L1 OOF meta-features, train L2 CatBoost from those meta-features, and use the frozen v5 threshold without retuning."
+}

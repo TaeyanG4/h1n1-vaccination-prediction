@@ -1,0 +1,18 @@
+{
+  "version": "v5_automl",
+  "engine": "autogluon",
+  "autogluon_version": "1.6.3",
+  "feature_mode": "survey",
+  "preset": "best_quality",
+  "time_limit_seconds": 3600,
+  "num_cpus": 6,
+  "num_gpus": 0,
+  "num_stack_levels": 1,
+  "num_bag_sets": 1,
+  "eval_metric": "f1",
+  "threshold_min": 0.15,
+  "threshold_max": 0.60,
+  "threshold_steps": 91,
+  "selection": "Train AutoGluon only on frozen development rows using dev_fold as the exact 5-fold grouping. Export OOF probabilities for every eligible model, retune the same fixed F1 threshold grid externally, freeze the best AutoML model/ensemble on development OOF, then score only that frozen selection on the reused diagnostic audit.",
+  "remote_submission_authorized": false
+}

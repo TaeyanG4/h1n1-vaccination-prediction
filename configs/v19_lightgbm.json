@@ -1,0 +1,49 @@
+{
+  "version": "v19_lightgbm",
+  "seed": 20261006,
+  "threads": 6,
+  "feature_blocks": [
+    "raw_native",
+    "survey_native",
+    "survey_missing",
+    "survey_freq_missing",
+    "historical_missing"
+  ],
+  "frequency_columns": [
+    "state",
+    "employment_occupation",
+    "employment_industry",
+    "hhs_region",
+    "agegrp",
+    "employment_status"
+  ],
+  "base_params": {
+    "n_estimators": 3000,
+    "learning_rate": 0.02,
+    "num_leaves": 15,
+    "max_depth": -1,
+    "min_child_samples": 80,
+    "min_child_weight": 0.001,
+    "reg_lambda": 10.0,
+    "reg_alpha": 0.1,
+    "colsample_bytree": 0.85,
+    "subsample": 0.9,
+    "subsample_freq": 1,
+    "min_split_gain": 0.0,
+    "max_bin": 255,
+    "scale_pos_weight": 1.0
+  },
+  "early_stopping_rounds": 120,
+  "hpo_trials": 36,
+  "hpo_timeout_seconds": 5400,
+  "hpo_screen_folds": [0, 1, 2],
+  "hpo_feature_top_k": 2,
+  "confirm_top_k": 6,
+  "fixed_top_k": 3,
+  "round_multipliers": [0.8, 1.0, 1.2],
+  "full_seeds": [42, 2026, 31415, 27182, 20261006],
+  "threshold_min": 0.15,
+  "threshold_max": 0.85,
+  "threshold_steps": 141,
+  "remote_submission_authorized": false
+}

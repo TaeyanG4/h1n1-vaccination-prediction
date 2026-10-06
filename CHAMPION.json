@@ -1,0 +1,34 @@
+{
+  "run_id": "v21_base_ebm_15_realmlp_10_single",
+  "family": "probability_ensemble",
+  "status": "final_champion",
+  "components": {
+    "base_probability_anchor": {
+      "weight": 0.75,
+      "composition": {
+        "v12_exact44_fullstack": 0.6,
+        "v18_xgb_trial59_r1367_single": 0.3,
+        "v19_lgbm_trial22_r192_seed5": 0.1
+      }
+    },
+    "ebm_single": 0.15,
+    "realmlp_td_single": 0.1
+  },
+  "threshold": 0.325,
+  "selection_source": "grouped 5-fold OOF; low-weight diversity blend; final promotion after v22 nested stack/gating failed",
+  "grouped5_nested_f1": 0.63915735864344,
+  "grouped5_fold_thresholds": [0.325, 0.325, 0.325, 0.325, 0.325],
+  "grouped5_fold_std": 0.010414515721835589,
+  "submission_path": "submissions\\v21_base_ebm_15_realmlp_10_single.csv",
+  "submission_sha256": "ce9d8c6774903b4d7eff418adff1806a47a1c0895569bec281eb34312055e563",
+  "kaggle_ref": 56876458,
+  "public_score": 0.63267,
+  "private_score": 0.63545,
+  "promoted_after": "v22_final_stack_gating_negative",
+  "notes": [
+    "Current strongest known private score in the project.",
+    "Standalone EBM/RealMLP are weak; their value is low-weight diversity in this ensemble.",
+    "Seed3 variants underperformed the single-refit version on the private leaderboard.",
+    "Do not tune further weights from leaderboard ordering; exact blend ordering is below the observed noise floor."
+  ]
+}

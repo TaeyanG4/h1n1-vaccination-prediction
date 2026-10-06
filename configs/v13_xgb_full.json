@@ -1,0 +1,24 @@
+{
+  "version": "v13_xgb_full",
+  "parent": "v3_xgb_d4_survey",
+  "feature_mode": "survey",
+  "frozen_threshold": 0.315,
+  "base_seed": 42,
+  "seeds": [42, 43, 44, 45, 46],
+  "threads": 6,
+  "n_estimators": 638,
+  "params": {
+    "max_depth": 4,
+    "learning_rate": 0.03,
+    "min_child_weight": 12.0,
+    "subsample": 0.9,
+    "colsample_bytree": 0.85,
+    "reg_lambda": 12.0,
+    "reg_alpha": 0.15,
+    "gamma": 0.0,
+    "tree_method": "hist",
+    "max_cat_to_onehot": 8,
+    "eval_metric": "logloss"
+  },
+  "remote_submission_authorized": false
+}

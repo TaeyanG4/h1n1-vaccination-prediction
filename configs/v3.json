@@ -1,0 +1,59 @@
+{
+  "version": "v3",
+  "parent": "baseline_v1",
+  "seed": 42,
+  "threads": 6,
+  "screen_folds": [0, 1],
+  "screen_max_f1_drop": 0.006,
+  "screen_max_auc_drop": 0.006,
+  "full_candidates_per_feature_mode": 1,
+  "blend_xgb_weights": [0.25, 0.5, 0.75],
+  "minimum_dev_gain_vs_best_cat": 0.001,
+  "maximum_audit_drop_vs_v1": 0.002,
+  "bootstrap_repeats": 1000,
+  "xgboost_common": {
+    "n_estimators": 2500,
+    "early_stopping_rounds": 100,
+    "tree_method": "hist",
+    "eval_metric": "logloss",
+    "max_cat_to_onehot": 8
+  },
+  "candidates": [
+    {
+      "id": "xgb_d3",
+      "max_depth": 3,
+      "learning_rate": 0.035,
+      "min_child_weight": 8.0,
+      "subsample": 0.9,
+      "colsample_bytree": 0.9,
+      "reg_lambda": 8.0,
+      "reg_alpha": 0.1,
+      "gamma": 0.0
+    },
+    {
+      "id": "xgb_d4",
+      "max_depth": 4,
+      "learning_rate": 0.03,
+      "min_child_weight": 12.0,
+      "subsample": 0.9,
+      "colsample_bytree": 0.85,
+      "reg_lambda": 12.0,
+      "reg_alpha": 0.15,
+      "gamma": 0.0
+    },
+    {
+      "id": "xgb_d5",
+      "max_depth": 5,
+      "learning_rate": 0.025,
+      "min_child_weight": 18.0,
+      "subsample": 0.9,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 18.0,
+      "reg_alpha": 0.2,
+      "gamma": 0.05
+    }
+  ],
+  "feature_modes": ["raw", "survey"],
+  "selection": "Use exact frozen v1 grouped development folds. Screen on folds 0/1 only, promote one XGBoost candidate per feature mode, tune threshold and blend weights on development OOF only, then freeze one recipe before reused-audit diagnostics.",
+  "remote_submission_authorized": false
+}

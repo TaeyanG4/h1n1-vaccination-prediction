@@ -1,0 +1,14 @@
+{
+  "run_id": "baseline_v1",
+  "seed": 42,
+  "folds": 5,
+  "threads": 6,
+  "families": ["logistic", "catboost"],
+  "catboost": {
+    "iterations": 500,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 5.0,
+    "loss_function": "Logloss"
+  }
+}

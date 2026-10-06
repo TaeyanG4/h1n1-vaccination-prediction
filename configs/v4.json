@@ -1,0 +1,41 @@
+{
+  "version": "v4",
+  "parent": "baseline_v1",
+  "seed": 42,
+  "threads": 6,
+  "screen_folds": [0, 1],
+  "screen_max_f1_drop": 0.004,
+  "screen_max_auc_drop": 0.004,
+  "full_candidates_per_feature_mode": 1,
+  "blend_xgb_weights": [0.15, 0.25, 0.35],
+  "minimum_dev_gain_vs_v2": 0.001,
+  "maximum_audit_drop_vs_v1": 0.002,
+  "bootstrap_repeats": 1000,
+  "xgboost": {
+    "n_estimators": 2500,
+    "early_stopping_rounds": 100,
+    "tree_method": "hist",
+    "eval_metric": "logloss",
+    "max_depth": 4,
+    "learning_rate": 0.03,
+    "min_child_weight": 12.0,
+    "subsample": 0.9,
+    "colsample_bytree": 0.85,
+    "reg_lambda": 12.0,
+    "reg_alpha": 0.15,
+    "gamma": 0.0
+  },
+  "encoders": [
+    {
+      "id": "onehot_all",
+      "min_frequency": null
+    },
+    {
+      "id": "onehot_min5",
+      "min_frequency": 5
+    }
+  ],
+  "feature_modes": ["raw", "survey"],
+  "selection": "Keep the v3 depth-4 XGBoost hyperparameters fixed. Change only fold-fitted categorical representation. Screen encoders on folds 0/1, promote one per feature mode, use development OOF for model/threshold/blend selection, then freeze before reused-audit diagnostics.",
+  "remote_submission_authorized": false
+}

@@ -1,0 +1,18 @@
+{
+  "version": "v12_exact_v5_fullstack",
+  "parent": "v5_automl",
+  "feature_mode": "survey",
+  "selected_model": "CatBoost_BAG_L2",
+  "frozen_threshold": 0.315,
+  "seed": 20261005,
+  "time_limit_seconds": 9000,
+  "num_cpus": 6,
+  "num_gpus": 0,
+  "num_stack_levels": 1,
+  "num_bag_folds": 5,
+  "num_bag_sets": 1,
+  "eval_metric": "f1",
+  "dynamic_stacking": false,
+  "fit_weighted_ensemble": false,
+  "remote_submission_authorized": false
+}

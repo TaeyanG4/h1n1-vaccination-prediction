@@ -1,0 +1,23 @@
+{
+  "version": "v20_tabm",
+  "seed": 20261006,
+  "device": "cuda",
+  "feature_blocks": ["raw_native", "survey_native", "historical_missing"],
+  "screen_folds": [0, 1],
+  "screen_top_k": 4,
+  "max_epochs": 120,
+  "patience": 14,
+  "eval_batch_size": 2048,
+  "threshold_min": 0.15,
+  "threshold_max": 0.85,
+  "threshold_steps": 141,
+  "full_seeds": [42, 2026, 31415],
+  "recipes": [
+    {"id":"plain256","arch_type":"tabm-mini","num_emb_type":"none","n_blocks":3,"d_block":256,"dropout":0.10,"tabm_k":32,"lr":0.0020,"weight_decay":0.0,"batch_size":256},
+    {"id":"pwl256","arch_type":"tabm-mini","num_emb_type":"pwl","num_emb_n_bins":32,"d_embedding":16,"n_blocks":2,"d_block":256,"dropout":0.10,"tabm_k":32,"lr":0.0015,"weight_decay":0.0001,"batch_size":256},
+    {"id":"pwl512","arch_type":"tabm-mini","num_emb_type":"pwl","num_emb_n_bins":48,"d_embedding":16,"n_blocks":2,"d_block":512,"dropout":0.15,"tabm_k":32,"lr":0.0010,"weight_decay":0.0001,"batch_size":256},
+    {"id":"pwl384_k16","arch_type":"tabm-mini","num_emb_type":"pwl","num_emb_n_bins":48,"d_embedding":12,"n_blocks":2,"d_block":384,"dropout":0.10,"tabm_k":16,"lr":0.0015,"weight_decay":0.001,"batch_size":256}
+  ],
+  "ensemble_tabm_weights": [0.05, 0.10, 0.15, 0.20],
+  "remote_submission_authorized": false
+}

@@ -1,0 +1,22 @@
+{
+  "version": "v2",
+  "parent": "baseline_v1",
+  "seed": 42,
+  "threads": 6,
+  "screen_folds": [0, 1],
+  "screen_max_f1_drop": 0.006,
+  "screen_max_auc_drop": 0.006,
+  "minimum_dev_gain": 0.002,
+  "maximum_audit_drop": 0.005,
+  "bootstrap_repeats": 1000,
+  "candidates": [
+    {"id": "lgb_raw", "family": "lightgbm", "features": "raw", "hypothesis": "A regularized leaf-wise learner captures complementary categorical interactions."},
+    {"id": "lgb_survey", "family": "lightgbm", "features": "survey", "hypothesis": "Row-local missingness, response patterns and ordinal opinions improve the same LightGBM configuration."},
+    {"id": "cat_survey", "family": "catboost", "features": "survey", "hypothesis": "The same survey features improve v1 CatBoost without changing its hyperparameters."}
+  ],
+  "lightgbm": {"n_estimators": 700, "learning_rate": 0.03, "num_leaves": 15, "max_depth": -1, "min_child_samples": 80, "reg_lambda": 10.0, "reg_alpha": 0.1, "colsample_bytree": 0.9, "subsample": 0.9, "subsample_freq": 1, "cat_smooth": 20.0, "verbosity": -1, "deterministic": true, "force_col_wise": true},
+  "catboost": {"iterations": 500, "depth": 6, "learning_rate": 0.05, "l2_leaf_reg": 5.0, "loss_function": "Logloss"},
+  "selection": "Development OOF F1 only; coarse 0.15-0.60 threshold grid inherited from v1. Freeze before reused audit. No leaderboard tuning.",
+  "blend_policy": "Fixed equal weights only: v1 CatBoost + v1 logistic; v1 CatBoost + best eligible new LightGBM; v1 CatBoost + eligible cat_survey.",
+  "remote_submission_authorized": false
+}

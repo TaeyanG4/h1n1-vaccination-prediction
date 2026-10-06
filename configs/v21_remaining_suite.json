@@ -1,0 +1,26 @@
+{
+  "version": "v21_remaining_suite",
+  "seed": 20261006,
+  "threads": 6,
+  "screen_folds": [0, 1],
+  "full_folds": [0, 1, 2, 3, 4],
+  "screen_gate_nested_f1": 0.615,
+  "threshold_min": 0.15,
+  "threshold_max": 0.85,
+  "threshold_steps": 141,
+  "families": [
+    {"id":"realmlp_td","block":"survey_native","enabled":true},
+    {"id":"realmlp_tds","block":"historical_missing","enabled":true},
+    {"id":"extratrees","block":"historical_missing","enabled":true},
+    {"id":"ebm","block":"survey_native","enabled":true},
+    {"id":"tabr","block":"survey_native","enabled":true},
+    {"id":"xrfm","block":"historical_missing","enabled":true},
+    {"id":"tabpfn","block":"raw_native","enabled":true}
+  ],
+  "ensemble_new_weights": [0.05, 0.10, 0.15, 0.20],
+  "full_refit_max_new_families": 3,
+  "remote_submission_authorized": false,
+  "notes": {
+    "modernnca": "Not installed in the current environment. Deliberately excluded from this one-command suite rather than mutating the working environment. Revisit only if the existing retrieval/kernel lanes justify a separate isolated environment."
+  }
+}

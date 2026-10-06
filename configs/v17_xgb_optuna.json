@@ -1,0 +1,21 @@
+{
+  "version": "v17_xgb_optuna",
+  "parent": "v13_xgb_full",
+  "seed": 20261006,
+  "threads": 6,
+  "device": "cpu",
+  "study_name": "v17_xgb_optuna",
+  "n_trials": 180,
+  "study_timeout_seconds": 21600,
+  "screen_folds": [0, 1, 2],
+  "confirm_top_k": 10,
+  "n_estimators_search": 5000,
+  "early_stopping_rounds": 150,
+  "threshold_min": 0.15,
+  "threshold_max": 0.85,
+  "threshold_steps": 141,
+  "round_multipliers": [0.85, 1.0, 1.15],
+  "full_seeds": [42, 2026, 31415, 27182, 20261006],
+  "feature_modes": ["raw", "survey", "legacy_ordinal", "historical"],
+  "remote_submission_authorized": false
+}

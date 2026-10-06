@@ -1,0 +1,14 @@
+{
+  "version": "v18_xgb_finalize_ensemble",
+  "parent": "v17_xgb_optuna",
+  "top_k_confirmed": 5,
+  "round_multipliers": [0.75, 0.85, 1.0, 1.15],
+  "full_seeds": [42, 2026, 31415, 27182, 20261006],
+  "ensemble_v12_weights": [0.6, 0.7, 0.8, 0.9],
+  "ensemble_kinds": ["prob", "rank"],
+  "threshold_min": 0.15,
+  "threshold_max": 0.85,
+  "threshold_steps": 141,
+  "seed": 20261006,
+  "remote_submission_authorized": false
+}

@@ -1,0 +1,58 @@
+{
+  "version": "v10_tewoe",
+  "parent": "v2_survey",
+  "seed": 42,
+  "threads": 6,
+  "feature_mode": "survey",
+  "encoded_columns": [
+    "state",
+    "employment_occupation",
+    "employment_industry",
+    "hhs_region",
+    "agegrp",
+    "education_comp",
+    "inc_pov",
+    "census_msa"
+  ],
+  "target_encoding_smoothing": 20.0,
+  "woe_alpha": 1.0,
+  "threshold_min": 0.15,
+  "threshold_max": 0.60,
+  "threshold_steps": 91,
+  "xgboost": {
+    "n_estimators": 2500,
+    "early_stopping_rounds": 100,
+    "tree_method": "hist",
+    "eval_metric": "logloss",
+    "max_cat_to_onehot": 8,
+    "max_depth": 4,
+    "learning_rate": 0.03,
+    "min_child_weight": 12.0,
+    "subsample": 0.9,
+    "colsample_bytree": 0.85,
+    "reg_lambda": 12.0,
+    "reg_alpha": 0.15,
+    "gamma": 0.0
+  },
+  "lightgbm": {
+    "n_estimators": 2000,
+    "early_stopping_rounds": 100,
+    "learning_rate": 0.025,
+    "num_leaves": 15,
+    "max_depth": -1,
+    "min_child_samples": 80,
+    "reg_lambda": 10.0,
+    "reg_alpha": 0.1,
+    "colsample_bytree": 0.9,
+    "subsample": 0.9,
+    "subsample_freq": 1,
+    "verbosity": -1,
+    "deterministic": true,
+    "force_col_wise": true
+  },
+  "predeclared_ensembles": [
+    "tewoe_xgb_lgb_equal",
+    "v5_tewoe_tri_equal"
+  ],
+  "remote_submission_authorized": false
+}

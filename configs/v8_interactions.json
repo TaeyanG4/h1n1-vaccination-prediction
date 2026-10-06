@@ -1,0 +1,24 @@
+{
+  "version": "v8_interactions",
+  "parent": "v2_cat_survey",
+  "primary_candidate": "survey_all",
+  "seed": 20261005,
+  "threads": 6,
+  "screen_folds": [0, 1],
+  "threshold_min": 0.15,
+  "threshold_max": 0.60,
+  "threshold_steps": 91,
+  "catboost": {
+    "iterations": 500,
+    "depth": 6,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 5.0,
+    "loss_function": "Logloss"
+  },
+  "candidates": [
+    {"id": "survey_opinion", "block": "opinion"},
+    {"id": "survey_context", "block": "context"},
+    {"id": "survey_all", "block": "all"}
+  ],
+  "remote_submission_authorized": false
+}

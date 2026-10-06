@@ -1,0 +1,50 @@
+# Kaggle data and generated artifacts
+data/
+artifacts/
+submissions/
+reports/
+reproduction_runs/
+kaggle_ops/
+
+# Local campaign/session notes
+agents.md
+plan.md
+discoveries.md
+handoff.md
+versions/
+.kaggle-skill/
+research/public_notebooks/
+
+# Credentials / local tooling
+.kaggle/
+.tools/
+.env
+.env.*
+kaggle.json
+access_token
+credentials.json
+
+# Python environments / caches
+.venv/
+.venv-*/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Model / prediction binaries if created outside artifacts/
+*.joblib
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.npy
+*.npz
+
+# Notebook execution outputs retained locally only
+notebooks/*executed.ipynb
+notebooks/*verified.ipynb
+
+# Downloads / archives / OS noise
+*.zip
+Thumbs.db
+.DS_Store
