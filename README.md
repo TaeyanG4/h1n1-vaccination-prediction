@@ -5,6 +5,7 @@ Reproducible tabular-ML research for the Kaggle competition **Prediction of H1N1
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB.svg?logo=python&logoColor=white)](#setup)
 [![Metric](https://img.shields.io/badge/Private%20F1-0.63545-0b62a4.svg)](#final-result)
+[![Tests](https://github.com/TaeyanG4/h1n1-vaccination-prediction/actions/workflows/tests.yml/badge.svg)](https://github.com/TaeyanG4/h1n1-vaccination-prediction/actions/workflows/tests.yml)
 
 <p align="center">
   <img src="docs/assets/champion-ensemble.svg" alt="Final H1N1 ensemble architecture" width="100%" />
@@ -12,7 +13,7 @@ Reproducible tabular-ML research for the Kaggle competition **Prediction of H1N1
 
 The project started from a CatBoost baseline and evolved through grouped validation, AutoGluon stacking, XGBoost/LightGBM optimization, TabM, EBM, RealMLP, and constrained ensemble research. The final result came from combining several individually different error patterns rather than from one dominant standalone model.
 
-> Kaggle competition: `prediction-of-h1n1-vaccination`
+> Kaggle competition: [`prediction-of-h1n1-vaccination`](https://www.kaggle.com/competitions/prediction-of-h1n1-vaccination)
 >
 > Metric: binary **F1** for `vacc_h1n1_f`
 
