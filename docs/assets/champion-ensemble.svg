@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="590" viewBox="0 0 1200 590" role="img" aria-labelledby="title desc">
+  <title id="title">Final H1N1 vaccination ensemble architecture</title>
+  <desc id="desc">A five-model probability ensemble with effective weights 45 percent AutoGluon stack, 22.5 percent XGBoost, 7.5 percent LightGBM, 15 percent EBM, and 10 percent RealMLP-TD, followed by a 0.325 threshold.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fbff"/>
+      <stop offset="1" stop-color="#eef6ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#17324d" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2f6fb0"/>
+    </marker>
+    <style>
+      .title { font: 700 30px system-ui, -apple-system, Segoe UI, sans-serif; fill:#102a43; }
+      .sub { font: 500 16px system-ui, -apple-system, Segoe UI, sans-serif; fill:#627d98; }
+      .boxTitle { font: 700 19px system-ui, -apple-system, Segoe UI, sans-serif; fill:#102a43; }
+      .boxSub { font: 600 14px system-ui, -apple-system, Segoe UI, sans-serif; fill:#486581; }
+      .small { font: 500 13px system-ui, -apple-system, Segoe UI, sans-serif; fill:#627d98; }
+      .score { font: 800 36px system-ui, -apple-system, Segoe UI, sans-serif; fill:#0b62a4; }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1200" height="590" rx="28" fill="url(#bg)"/>
+  <text x="56" y="58" class="title">Final ensemble: diversity over standalone strength</text>
+  <text x="56" y="88" class="sub">Grouped validation selected a compact probability blend; low-weight EBM and RealMLP supplied complementary errors.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="55" y="145" width="180" height="105" rx="18" fill="#e6f4ff" stroke="#89c2ff"/>
+    <rect x="260" y="145" width="180" height="105" rx="18" fill="#edf2ff" stroke="#a5b4fc"/>
+    <rect x="465" y="145" width="180" height="105" rx="18" fill="#e9fbf0" stroke="#86d9a3"/>
+    <rect x="670" y="145" width="180" height="105" rx="18" fill="#fff6e5" stroke="#f3c969"/>
+    <rect x="875" y="145" width="180" height="105" rx="18" fill="#f5edff" stroke="#c9a7ff"/>
+  </g>
+
+  <text x="145" y="184" text-anchor="middle" class="boxTitle">AutoGluon stack</text>
+  <text x="145" y="214" text-anchor="middle" class="boxSub">v12 exact-44</text>
+  <text x="145" y="239" text-anchor="middle" class="boxTitle">45.0%</text>
+
+  <text x="350" y="184" text-anchor="middle" class="boxTitle">XGBoost</text>
+  <text x="350" y="214" text-anchor="middle" class="boxSub">v18 trial59</text>
+  <text x="350" y="239" text-anchor="middle" class="boxTitle">22.5%</text>
+
+  <text x="555" y="184" text-anchor="middle" class="boxTitle">LightGBM</text>
+  <text x="555" y="214" text-anchor="middle" class="boxSub">v19 trial22</text>
+  <text x="555" y="239" text-anchor="middle" class="boxTitle">7.5%</text>
+
+  <text x="760" y="184" text-anchor="middle" class="boxTitle">EBM</text>
+  <text x="760" y="214" text-anchor="middle" class="boxSub">diversity model</text>
+  <text x="760" y="239" text-anchor="middle" class="boxTitle">15.0%</text>
+
+  <text x="965" y="184" text-anchor="middle" class="boxTitle">RealMLP-TD</text>
+  <text x="965" y="214" text-anchor="middle" class="boxSub">diversity model</text>
+  <text x="965" y="239" text-anchor="middle" class="boxTitle">10.0%</text>
+
+  <g fill="none" stroke="#2f6fb0" stroke-width="3" marker-end="url(#arrow)">
+    <path d="M145 250 C145 300 490 295 555 340"/>
+    <path d="M350 250 C350 300 500 300 555 340"/>
+    <path d="M555 250 L555 340"/>
+    <path d="M760 250 C760 300 610 300 555 340"/>
+    <path d="M965 250 C965 300 620 295 555 340"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="385" y="342" width="340" height="95" rx="20" fill="#ffffff" stroke="#5fa8d3" stroke-width="2"/>
+    <rect x="805" y="342" width="290" height="150" rx="20" fill="#ffffff" stroke="#b8c7d9"/>
+  </g>
+  <text x="555" y="380" text-anchor="middle" class="boxTitle">Weighted probability ensemble</text>
+  <text x="555" y="410" text-anchor="middle" class="boxSub">Frozen decision threshold = 0.325</text>
+  <line x1="555" y1="437" x2="555" y2="492" stroke="#2f6fb0" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="445" y="500" width="220" height="56" rx="18" fill="#0b62a4"/>
+  <text x="555" y="535" text-anchor="middle" style="font:700 20px system-ui, -apple-system, Segoe UI, sans-serif; fill:white">Final binary prediction</text>
+
+  <text x="835" y="382" class="small">Grouped-5 nested OOF F1</text>
+  <text x="835" y="423" class="score">0.639157</text>
+  <text x="835" y="456" class="small">Kaggle private F1</text>
+  <text x="835" y="488" class="score">0.63545</text>
+</svg>

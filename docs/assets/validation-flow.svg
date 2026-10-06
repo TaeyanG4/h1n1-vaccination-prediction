@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+  <title id="title">Leakage-aware validation workflow</title>
+  <desc id="desc">Feature rows are hashed into duplicate groups, split into development and locked audit partitions, evaluated with five stratified group folds, then thresholded on OOF predictions and refit on all labels.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4f7cac"/></marker>
+    <style>
+      .t { font:700 24px system-ui,-apple-system,Segoe UI,sans-serif; fill:#102a43 }
+      .h { font:700 16px system-ui,-apple-system,Segoe UI,sans-serif; fill:#102a43 }
+      .s { font:500 13px system-ui,-apple-system,Segoe UI,sans-serif; fill:#627d98 }
+    </style>
+  </defs>
+  <rect width="1200" height="330" rx="26" fill="#fbfdff"/>
+  <text x="45" y="48" class="t">Leakage-aware validation and finalization</text>
+  <g stroke="#9fb3c8" fill="#fff" stroke-width="1.5">
+    <rect x="45" y="100" width="170" height="105" rx="18"/>
+    <rect x="255" y="100" width="170" height="105" rx="18"/>
+    <rect x="465" y="100" width="170" height="105" rx="18"/>
+    <rect x="675" y="100" width="170" height="105" rx="18"/>
+    <rect x="885" y="100" width="260" height="105" rx="18"/>
+  </g>
+  <g stroke="#4f7cac" stroke-width="3" marker-end="url(#a)">
+    <line x1="215" y1="152" x2="248" y2="152"/>
+    <line x1="425" y1="152" x2="458" y2="152"/>
+    <line x1="635" y1="152" x2="668" y2="152"/>
+    <line x1="845" y1="152" x2="878" y2="152"/>
+  </g>
+  <text x="130" y="135" text-anchor="middle" class="h">Hash duplicate X rows</text>
+  <text x="130" y="165" text-anchor="middle" class="s">avoid profile leakage</text>
+  <text x="130" y="184" text-anchor="middle" class="s">across folds</text>
+
+  <text x="340" y="135" text-anchor="middle" class="h">Development / audit</text>
+  <text x="340" y="165" text-anchor="middle" class="s">33,722 dev</text>
+  <text x="340" y="184" text-anchor="middle" class="s">8,432 locked audit</text>
+
+  <text x="550" y="135" text-anchor="middle" class="h">5 group folds</text>
+  <text x="550" y="165" text-anchor="middle" class="s">OOF probabilities</text>
+  <text x="550" y="184" text-anchor="middle" class="s">same fold manifest</text>
+
+  <text x="760" y="135" text-anchor="middle" class="h">Threshold selection</text>
+  <text x="760" y="165" text-anchor="middle" class="s">maximize F1 on OOF</text>
+  <text x="760" y="184" text-anchor="middle" class="s">freeze before refit</text>
+
+  <text x="1015" y="135" text-anchor="middle" class="h">Full refit + submission gate</text>
+  <text x="1015" y="165" text-anchor="middle" class="s">train on all 42,154 labels</text>
+  <text x="1015" y="184" text-anchor="middle" class="s">schema / ID / hash checks</text>
+
+  <rect x="265" y="245" width="670" height="52" rx="18" fill="#e8f3ff" stroke="#8bbde8"/>
+  <text x="600" y="277" text-anchor="middle" class="h">Rule: model/weight ideas can use OOF; final thresholds are never retuned on full labels.</text>
+</svg>

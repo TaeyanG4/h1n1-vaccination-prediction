@@ -2,6 +2,14 @@
 
 Reproducible tabular-ML research for the Kaggle competition **Prediction of H1N1 vaccination**.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.12-3776AB.svg?logo=python&logoColor=white)](#setup)
+[![Metric](https://img.shields.io/badge/Private%20F1-0.63545-0b62a4.svg)](#final-result)
+
+<p align="center">
+  <img src="docs/assets/champion-ensemble.svg" alt="Final H1N1 ensemble architecture" width="100%" />
+</p>
+
 The project started from a CatBoost baseline and evolved through grouped validation, AutoGluon stacking, XGBoost/LightGBM optimization, TabM, EBM, RealMLP, and constrained ensemble research. The final result came from combining several individually different error patterns rather than from one dominant standalone model.
 
 > Kaggle competition: `prediction-of-h1n1-vaccination`
@@ -54,6 +62,10 @@ Validation was designed around duplicate-profile leakage risk:
 - the auxiliary target `vacc_seas_f` is never used as a feature.
 
 The dataset contains exact duplicate feature profiles and some duplicate groups with conflicting labels, which is why ordinary random K-fold validation was intentionally avoided.
+
+<p align="center">
+  <img src="docs/assets/validation-flow.svg" alt="Leakage-aware validation workflow" width="100%" />
+</p>
 
 ## Experiment progression
 
@@ -159,5 +171,4 @@ No raw competition files, credentials, Kaggle API tokens, or model binaries are 
 
 ## License
 
-No open-source license has been selected yet. Until a license is added, the repository remains copyrighted by its owner with no implied redistribution rights.
-
+This project is released under the [MIT License](LICENSE). Kaggle competition data is not redistributed and remains subject to Kaggle and the dataset owner's terms.

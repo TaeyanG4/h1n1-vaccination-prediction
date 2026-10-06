@@ -1,5 +1,7 @@
 # Final campaign results
 
+![Final ensemble architecture](assets/champion-ensemble.svg)
+
 ## Champion
 
 The final champion is:
@@ -23,6 +25,10 @@ EBM and RealMLP were not competitive standalone models. Their value came from co
 - RealMLP OOF correlation vs v12/XGB/LGBM/TabM: approximately `0.961 / 0.960 / 0.952 / 0.963`.
 
 RealMLP was especially useful because it was materially less correlated with the existing model family while still containing enough signal to help at a small weight.
+
+## Validation workflow
+
+![Leakage-aware validation workflow](assets/validation-flow.svg)
 
 ## Important leaderboard lesson
 
@@ -60,4 +66,3 @@ The campaign stopped after v22 because:
 5. further local/LB sweeps had lower information value than overfitting risk.
 
 The final recommended artifact is therefore the frozen v21 champion recorded in `CHAMPION.json`.
-
